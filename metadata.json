@@ -1,0 +1,6 @@
+{
+  "name": "ShambaSoil",
+  "description": "Kenyan mobile-first agricultural soil intelligence platform. Understand your soil, farm smarter, and make informed crop and fertilizer decisions.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

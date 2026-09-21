@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#1C3317"/>
+  <!-- Soil horizon layers -->
+  <path d="M0 360 C120 340 200 370 320 350 C420 330 480 345 512 340 L512 512 L0 512 Z" fill="#3D2817" opacity="0.95"/>
+  <path d="M0 420 C140 400 240 430 360 410 C440 395 490 410 512 405 L512 512 L0 512 Z" fill="#24160B"/>
+  
+  <!-- Digital circuit / Root network lines -->
+  <path d="M256 260 L256 340 M256 340 L210 390 M256 340 L302 390 M210 390 L170 430 M302 390 L342 430" stroke="#84CC16" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <circle cx="210" cy="390" r="7" fill="#FACC15"/>
+  <circle cx="302" cy="390" r="7" fill="#FACC15"/>
+  <circle cx="170" cy="430" r="6" fill="#FACC15"/>
+  <circle cx="342" cy="430" r="6" fill="#FACC15"/>
+  
+  <!-- Central camera lens / scanner ring -->
+  <circle cx="256" cy="220" r="95" stroke="#E6D5B8" stroke-width="6" stroke-dasharray="12 8" opacity="0.6"/>
+  <circle cx="256" cy="220" r="80" fill="#2D4A22" stroke="#4ADE80" stroke-width="4"/>
+  
+  <!-- Stylized leaf emerging from soil through lens -->
+  <path d="M256 160 C290 180 305 210 300 240 C280 260 250 255 240 240 C235 220 245 190 256 160 Z" fill="#4ADE80"/>
+  <path d="M256 160 C230 185 220 215 225 242 C240 258 265 250 256 160 Z" fill="#22C55E"/>
+  <path d="M256 175 L256 250" stroke="#14532D" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Scanning crosshair nodes -->
+  <path d="M190 220 L210 220 M302 220 L322 220 M256 154 L256 174 M256 266 L256 286" stroke="#FACC15" stroke-width="4" stroke-linecap="round"/>
+</svg>

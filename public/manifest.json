@@ -1,0 +1,19 @@
+{
+  "short_name": "ShambaSoil",
+  "name": "ShambaSoil — Soil Intelligence for Kenya",
+  "description": "Your Soil. Your Crop. Your Decision. Take a photo, understand soil conditions, and farm smarter.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FBFBF9",
+  "theme_color": "#2D4A22",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["agriculture", "productivity", "utilities"]
+}
