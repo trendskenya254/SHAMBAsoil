@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.js';
 import { api } from '../services/api.js';
+import { PWAInstallButton } from './PWAInstallButton.js';
 
 interface NavigationProps {
   currentView: string;
@@ -114,6 +115,9 @@ export const Navigation: React.FC<NavigationProps> = ({
 
         {/* Status Indicators & Controls */}
         <div className="flex items-center gap-2 sm:gap-4">
+          {/* PWA Install Button */}
+          <PWAInstallButton />
+
           {/* Offline Badge */}
           {!isOnline && (
             <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold">
@@ -239,6 +243,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
         {/* Sidebar Footer */}
         <div className="p-4 border-t border-stone-800 space-y-2 text-xs">
+          <PWAInstallButton variant="sidebar" />
           <div className="flex items-center justify-between text-stone-400 px-2 py-1">
             <span>{profile?.role === 'system_admin' ? 'Administrator' : 'Farmer'}</span>
             <span className="text-[10px] font-mono bg-stone-800 px-1.5 py-0.5 rounded text-stone-300">

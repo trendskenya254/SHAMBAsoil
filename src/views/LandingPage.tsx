@@ -1,6 +1,7 @@
 import React from 'react';
 import { Camera, HelpCircle, ArrowRight, ShieldCheck, CheckCircle2, Sprout, Layers, BookOpen, Sparkles } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.js';
+import { PWAInstallButton } from '../components/PWAInstallButton.js';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -49,19 +50,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </button>
           </div>
 
+          <PWAInstallButton />
+
           <button
             id="landing-signin-nav-btn"
             onClick={onSignIn}
-            className="px-4 py-2 text-stone-700 hover:text-stone-900 text-sm font-semibold rounded-xl hover:bg-stone-100 transition-colors"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 text-stone-700 hover:text-stone-900 text-xs sm:text-sm font-semibold rounded-xl hover:bg-stone-100 transition-colors"
           >
             {t.navLogin}
           </button>
           <button
             id="landing-register-nav-btn"
             onClick={onGetStarted}
-            className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold rounded-xl shadow-sm transition-colors hidden sm:inline-flex"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition-colors inline-flex items-center gap-1"
           >
-            {t.navRegister}
+            <span>{t.navRegister}</span>
           </button>
         </div>
       </header>
@@ -101,6 +104,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             >
               {language === 'sw' ? 'Ingia Kwenye Akaunti Yako' : 'Sign In to Account'}
             </button>
+            <PWAInstallButton variant="hero" />
           </div>
 
           {/* Safety Notice Callout */}
@@ -232,6 +236,37 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                   ? 'Hatutawahi kukudanganya kwa kubuni pH au namba za mbolea kutoka kwenye picha tu. Usalama wa kilimo ndio msingi wetu.'
                   : 'We strictly never invent chemical pH, nitrogen, or phosphorus metrics from photography alone.'}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom CTA Banner */}
+        <section className="px-6 py-14 bg-emerald-900 text-white text-center">
+          <div className="max-w-3xl mx-auto space-y-5">
+            <h3 className="text-2xl sm:text-3xl font-bold font-display">
+              {language === 'sw' ? 'Uko Tayari Kuelewa Udongo Wako?' : 'Ready to Understand Your Soil?'}
+            </h3>
+            <p className="text-emerald-100 text-sm sm:text-base max-w-xl mx-auto">
+              {language === 'sw'
+                ? 'Jiunge na wakulima wenzako nchini Kenya wanaofanya maamuzi sahihi ya mbolea na mazao.'
+                : 'Create your farmer account in less than a minute. Works across all 47 Kenyan counties.'}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <button
+                id="cta-register-btn"
+                onClick={onGetStarted}
+                className="w-full sm:w-auto px-7 py-3.5 bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold rounded-2xl shadow-md transition-all text-sm flex items-center justify-center gap-2"
+              >
+                <span>{language === 'sw' ? 'Sajili Akaunti Bure' : 'Create Free Account'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <button
+                id="cta-signin-btn"
+                onClick={onSignIn}
+                className="w-full sm:w-auto px-6 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-white font-semibold rounded-2xl border border-emerald-600 transition-colors text-sm"
+              >
+                {language === 'sw' ? 'Ingia Kwenye Akaunti' : 'Sign In to Account'}
+              </button>
             </div>
           </div>
         </section>

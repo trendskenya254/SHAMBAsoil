@@ -1,0 +1,414 @@
+{
+  "auth_users": [],
+  "sessions": [],
+  "profiles": [],
+  "farms": [],
+  "soil_analyses": [],
+  "soil_images": [],
+  "visual_observations": [],
+  "soil_test_results": [],
+  "crops": [
+    {
+      "id": "crop_maize",
+      "name": "Maize (Mahindi)",
+      "scientific_name": "Zea mays",
+      "category": "cereal",
+      "growth_duration_days": "90 - 180 (variety dependent)",
+      "temperature_range": "18°C - 30°C",
+      "water_requirement": "500 - 800 mm during growing season",
+      "soil_preferences": "Deep, well-drained loamy to sandy clay loam soils rich in organic matter. Sensitive to waterlogging.",
+      "ph_preference": "5.8 - 7.0 (growth severely stunted below pH 5.0 due to aluminium toxicity)",
+      "drainage_preference": "Good drainage essential; water stagnation causes yellowing and stunted rooting within 48 hours.",
+      "nutrient_requirements": {
+        "n": "high",
+        "p": "high",
+        "k": "moderate",
+        "description": "High nitrogen needed for vegetative vigor and cob fill; high phosphorus critical at planting for root establishment."
+      },
+      "planting_guidance": "Plant 2 seeds per hole at 75cm between rows and 25cm between hills, or 75cm x 50cm for 2 plants. Plant at onset of steady rains.",
+      "spacing": "75 cm x 25-30 cm",
+      "common_deficiencies": [
+        "Nitrogen (V-shaped yellowing along leaf midrib)",
+        "Phosphorus (purpling of lower leaves)",
+        "Zinc (broad bleached bands on young leaves)"
+      ],
+      "common_diseases": [
+        "Maize Lethal Necrosis Disease (MLND)",
+        "Northern Corn Leaf Blight",
+        "Grey Leaf Spot",
+        "Head Smut"
+      ],
+      "common_pests": [
+        "Fall Armyworm (Spodoptera frugiperda)",
+        "Stem borer (Busseola fusca)",
+        "Maize weevil in storage"
+      ],
+      "harvest_info": "Harvest when husks dry and brown, kernel moisture drops below 14% to prevent aflatoxin contamination.",
+      "kenya_notes": "Staple food across Western, Rift Valley, Central, and Eastern Kenya. Acidic soils in Western and North Rift often require agricultural lime (calcitic/dolomitic) before applying mineral fertilizers.",
+      "active": true
+    },
+    {
+      "id": "crop_beans",
+      "name": "Common Beans (Maharage)",
+      "scientific_name": "Phaseolus vulgaris",
+      "category": "legume",
+      "growth_duration_days": "65 - 90 days",
+      "temperature_range": "16°C - 24°C",
+      "water_requirement": "300 - 500 mm well-distributed",
+      "soil_preferences": "Fertile, well-drained loams. Highly sensitive to saline soils and standing water.",
+      "ph_preference": "6.0 - 6.8 (Rhizobia nitrogen fixation drops sharply below pH 5.5)",
+      "drainage_preference": "Requires very well-drained soil. Waterlogging causes rapid root rot and damping off.",
+      "nutrient_requirements": {
+        "n": "low",
+        "p": "high",
+        "k": "moderate",
+        "description": "Fixes atmospheric nitrogen through symbiotic nodules; requires adequate phosphorus for nodule development and flowering."
+      },
+      "planting_guidance": "Plant at 45cm row spacing and 10-15cm within row at a depth of 3-5cm. Inoculation with Biofix rhizobium recommended.",
+      "spacing": "45 cm x 15 cm",
+      "common_deficiencies": [
+        "Phosphorus (dark green stunted foliage, poor flowering)",
+        "Molybdenum (nodule inhibition in acidic soils)",
+        "Potassium (leaf edge scorching)"
+      ],
+      "common_diseases": [
+        "Angular Leaf Spot",
+        "Bean Common Mosaic Virus",
+        "Anthracnose",
+        "Root Rot (Fusarium/Pythium)"
+      ],
+      "common_pests": [
+        "Bean fly (Ophiomyia phaseoli)",
+        "Aphids",
+        "Pod borers",
+        "Bruchild beetles in store"
+      ],
+      "harvest_info": "Harvest when pods are dry and rattle. Dry thoroughly on clean tarpaulins to below 13% moisture.",
+      "kenya_notes": "Common varieties: Rosecoco (GLP-2), Mwitemania (GLP-X92), Red Haricot, Nyayo. Ideal intercrop with maize.",
+      "active": true
+    },
+    {
+      "id": "crop_tomatoes",
+      "name": "Tomatoes (Nyanya)",
+      "scientific_name": "Solanum lycopersicum",
+      "category": "vegetable",
+      "growth_duration_days": "75 - 100 days after transplanting",
+      "temperature_range": "20°C - 27°C",
+      "water_requirement": "400 - 600 mm (consistent irrigation essential)",
+      "soil_preferences": "Deep, crumbly loam with abundant decomposed organic matter. High water retention with excellent drainage.",
+      "ph_preference": "6.0 - 6.8 (calcium uptake impaired at low pH, leading to blossom end rot)",
+      "drainage_preference": "Must have excellent drainage. Prone to bacterial wilt in waterlogged heavy clay.",
+      "nutrient_requirements": {
+        "n": "moderate",
+        "p": "high",
+        "k": "high",
+        "description": "Potassium essential for fruit firmness, shape, and sugar content; Calcium critical for blossom end rot prevention."
+      },
+      "planting_guidance": "Sow in nursery beds; transplant strong seedlings after 3-4 weeks at 60cm x 45cm spacing with well-cured compost.",
+      "spacing": "60 cm x 45-60 cm",
+      "common_deficiencies": [
+        "Calcium (Blossom End Rot at base of fruit)",
+        "Potassium (uneven ripening, yellow shoulders)",
+        "Magnesium (interveinal chlorosis on older leaves)"
+      ],
+      "common_diseases": [
+        "Late Blight (Phytophthora infestans)",
+        "Bacterial Wilt (Ralstonia solanacearum)",
+        "Early Blight",
+        "Tomato Yellow Leaf Curl Virus"
+      ],
+      "common_pests": [
+        "Tuta absoluta (Tomato leafminer)",
+        "Whiteflies",
+        "Spider mites",
+        "Root-knot nematodes"
+      ],
+      "harvest_info": "Harvest at breaker or pink stage for transport; harvest fully red for immediate local consumption.",
+      "kenya_notes": "Grown extensively in Kirinyaga, Kajiado, Machakos, and Uasin Gishu. Rotate with non-solanaceous crops to avoid bacterial wilt buildup.",
+      "active": true
+    },
+    {
+      "id": "crop_sukuma_wiki",
+      "name": "Sukuma Wiki (Collard Greens)",
+      "scientific_name": "Brassica oleracea var. acephala",
+      "category": "vegetable",
+      "growth_duration_days": "45 - 60 days to first picking; harvests for 6+ months",
+      "temperature_range": "15°C - 25°C",
+      "water_requirement": "Regular, steady moisture; drought causes bitter tough leaves",
+      "soil_preferences": "Moisture-retentive loamy soils enriched with organic manure. Tolerates moderate clay if well aerated.",
+      "ph_preference": "6.0 - 7.5 (susceptible to clubroot disease in strongly acidic soils below pH 5.5)",
+      "drainage_preference": "Moderate to good drainage.",
+      "nutrient_requirements": {
+        "n": "high",
+        "p": "moderate",
+        "k": "moderate",
+        "description": "High continuous nitrogen demand for rapid, tender green leaf production across repeated cuttings."
+      },
+      "planting_guidance": "Transplant 4-week-old nursery seedlings at 45cm x 45cm or 60cm x 45cm. Top-dress with well-rotted manure or CAN after each major picking.",
+      "spacing": "45 cm x 45 cm",
+      "common_deficiencies": [
+        "Nitrogen (pale yellow small leaves)",
+        "Sulfur (uniform yellowing of young leaves)",
+        "Boron (cracked stems, hollow petioles)"
+      ],
+      "common_diseases": [
+        "Black Rot (Xanthomonas campestris)",
+        "Downy Mildew",
+        "Damping off",
+        "Alternaria leaf spot"
+      ],
+      "common_pests": [
+        "Diamondback moth (Plutella xylostella)",
+        "Cabbage aphids",
+        "Cutworms in young transplants"
+      ],
+      "harvest_info": "Pick outer mature leaves progressively every 7 to 10 days, leaving the central growing apex intact.",
+      "kenya_notes": "Universal household food security vegetable. Popular varieties: Thousand Headed, Southern Georgia. Sensitive to water stress.",
+      "active": true
+    },
+    {
+      "id": "crop_irish_potatoes",
+      "name": "Irish Potatoes (Viazi Mviringo)",
+      "scientific_name": "Solanum tuberosum",
+      "category": "tuber",
+      "growth_duration_days": "90 - 120 days",
+      "temperature_range": "15°C - 20°C (cool highland climates preferred)",
+      "water_requirement": "500 - 700 mm; sensitive to drought during tuber bulking",
+      "soil_preferences": "Loose, friable sandy loam or volcanic loam with good aeration. Dense compacted soil leads to deformed tubers.",
+      "ph_preference": "5.2 - 6.2 (slightly acidic; higher pH above 6.5 increases common scab severity)",
+      "drainage_preference": "Strictly well-drained. Heavy waterlogging leads to tuber rotting within 24-48 hours.",
+      "nutrient_requirements": {
+        "n": "moderate",
+        "p": "high",
+        "k": "high",
+        "description": "High potassium requirement for starch accumulation and disease resistance; phosphorus aids early root and stolon vigor."
+      },
+      "planting_guidance": "Use certified sprouted seed tubers (size 35-45mm). Plant in furrows 75cm apart with 30cm between tubers. Ridge up at 15-20cm vegetative height.",
+      "spacing": "75 cm x 30 cm",
+      "common_deficiencies": [
+        "Potassium (marginal necrosis, hollow heart in rapid growth)",
+        "Phosphorus (stunted stolons)",
+        "Magnesium"
+      ],
+      "common_diseases": [
+        "Late Blight (Phytophthora infestans)",
+        "Bacterial Wilt",
+        "Common Scab",
+        "Blackleg"
+      ],
+      "common_pests": [
+        "Potato Tuber Moth",
+        "Aphids",
+        "Root knot nematodes"
+      ],
+      "harvest_info": "Dehaulm (cut foliage) 10-14 days before harvest to allow skin setting, preventing skinning and storage rotting.",
+      "kenya_notes": "Major production in Nyandarua, Meru, Nakuru, Elgeyo Marakwet, and Narok. Certified seed availability is key to controlling bacterial wilt.",
+      "active": true
+    },
+    {
+      "id": "crop_onions",
+      "name": "Bulb Onions (Kitunguu Maji)",
+      "scientific_name": "Allium cepa",
+      "category": "vegetable",
+      "growth_duration_days": "90 - 150 days",
+      "temperature_range": "18°C - 28°C (warm dry weather needed for curing)",
+      "water_requirement": "350 - 550 mm; withdraw water 2-3 weeks before harvest",
+      "soil_preferences": "Friable, stone-free sandy loam or silt loam. Heavy soils impede bulb expansion.",
+      "ph_preference": "6.0 - 6.8",
+      "drainage_preference": "High drainage required; sensitive to waterlogging which triggers bulb rots.",
+      "nutrient_requirements": {
+        "n": "moderate",
+        "p": "high",
+        "k": "high",
+        "description": "Phosphorus aids shallow root systems; excessive late nitrogen delays bulb maturity and causes thick necks."
+      },
+      "planting_guidance": "Transplant pencilsized seedlings at 30cm between rows and 10cm within rows. Keep bulb base shallow.",
+      "spacing": "30 cm x 10 cm",
+      "common_deficiencies": [
+        "Sulfur (weak pungent smell and pale color)",
+        "Zinc",
+        "Phosphorus"
+      ],
+      "common_diseases": [
+        "Purple Blotch (Alternaria porri)",
+        "Downy Mildew",
+        "Botrytis neck rot in storage"
+      ],
+      "common_pests": [
+        "Onion Thrips (Thrips tabaci) - major dry-season pest",
+        "Cutworms"
+      ],
+      "harvest_info": "Harvest when 50-70% of foliage tops collapse and bend over. Field-cure thoroughly in shade.",
+      "kenya_notes": "Grown in Kajiado (Loitokitok), Naivasha, Taveta, and Nyeri. Popular varieties: Red Pinoy, Bombay Red, Red Creole.",
+      "active": true
+    },
+    {
+      "id": "crop_avocado",
+      "name": "Hass Avocado (Parachichi)",
+      "scientific_name": "Persea americana",
+      "category": "fruit",
+      "growth_duration_days": "2.5 - 3 years to first fruit; productive for 25+ years",
+      "temperature_range": "16°C - 24°C",
+      "water_requirement": "1000 - 1200 mm annual rainfall or supplemental drip",
+      "soil_preferences": "Deep (>1.5m), well-aerated volcanic loams. Highly sensitive to saline soils and compaction.",
+      "ph_preference": "5.5 - 6.5",
+      "drainage_preference": "Extremely sensitive to poor drainage. Phytophthora cinnamomi root rot kills trees in poorly drained clay.",
+      "nutrient_requirements": {
+        "n": "moderate",
+        "p": "moderate",
+        "k": "high",
+        "description": "High potassium and boron requirements during fruit set and fruit development."
+      },
+      "planting_guidance": "Dig 60x60x60cm holes, mix topsoil with 20kg well-decomposed manure. Plant grafted seedlings at 5m x 5m or 6m x 6m spacing.",
+      "spacing": "5 m x 5 m (or 6 m x 6 m)",
+      "common_deficiencies": [
+        "Zinc (small rounded leaves, rosette pattern)",
+        "Boron (crooked fruit, internal browning)",
+        "Iron (chlorosis in calcareous soils)"
+      ],
+      "common_diseases": [
+        "Phytophthora Root Rot",
+        "Anthracnose on mature fruit",
+        "Cercospora spot"
+      ],
+      "common_pests": [
+        "False Codling Moth",
+        "Fruit Flies",
+        "Thrips on young fruit"
+      ],
+      "harvest_info": "Harvest mature fruits with clipping shears leaving a short pedicel; do not pull by hand.",
+      "kenya_notes": "Major export earner in Murang'a, Kiambu, Meru, Kisii, and Nyamira. Requires organic mulch around drip line.",
+      "active": true
+    },
+    {
+      "id": "crop_sorghum",
+      "name": "Sorghum (Mtama)",
+      "scientific_name": "Sorghum bicolor",
+      "category": "cereal",
+      "growth_duration_days": "90 - 120 days",
+      "temperature_range": "24°C - 32°C (drought-tolerant climate champion)",
+      "water_requirement": "350 - 500 mm",
+      "soil_preferences": "Wide adaptability; thrives on clay loams, vertisols (black cotton soil), and sandy soils.",
+      "ph_preference": "5.5 - 8.5 (highly tolerant of moderate soil salinity and alkalinity)",
+      "drainage_preference": "Tolerates temporary waterlogging far better than maize.",
+      "nutrient_requirements": {
+        "n": "moderate",
+        "p": "moderate",
+        "k": "low",
+        "description": "Extensive root system scavenges residual soil nutrients efficiently."
+      },
+      "planting_guidance": "Sow in rows 60-75cm apart, thin to 15-20cm within rows. Ideal for semi-arid counties.",
+      "spacing": "60 cm x 15-20 cm",
+      "common_deficiencies": [
+        "Nitrogen",
+        "Phosphorus in acidic red soils"
+      ],
+      "common_diseases": [
+        "Sorghum Smuts",
+        "Anthracnose",
+        "Ergot"
+      ],
+      "common_pests": [
+        "Quelea birds (major grain pest)",
+        "Shoot fly",
+        "Stem borers"
+      ],
+      "harvest_info": "Harvest panicles when grain is hard and black layer forms at seed attachment point.",
+      "kenya_notes": "Ideal climate-resilient crop for Eastern (Kitui, Machakos, Makueni), Coast, and lower Nyanza.",
+      "active": true
+    },
+    {
+      "id": "crop_green_grams",
+      "name": "Green Grams / Ndengu",
+      "scientific_name": "Vigna radiata",
+      "category": "legume",
+      "growth_duration_days": "60 - 75 days",
+      "temperature_range": "25°C - 35°C",
+      "water_requirement": "250 - 400 mm (drought-hardy)",
+      "soil_preferences": "Well-drained sandy loam or alluvial soils.",
+      "ph_preference": "6.2 - 7.2",
+      "drainage_preference": "Good drainage needed; cannot tolerate soggy root zones.",
+      "nutrient_requirements": {
+        "n": "low",
+        "p": "moderate",
+        "k": "low",
+        "description": "Atmospheric nitrogen fixer. Responsive to phosphorus micro-dosing at planting."
+      },
+      "planting_guidance": "Plant at 45cm x 15cm at onset of short rains. Varieties: KS20, Biashara, N26.",
+      "spacing": "45 cm x 15 cm",
+      "common_deficiencies": [
+        "Phosphorus",
+        "Iron chlorosis in high pH soils"
+      ],
+      "common_diseases": [
+        "Powdery Mildew",
+        "Yellow Mosaic Virus",
+        "Charcoal Rot"
+      ],
+      "common_pests": [
+        "Pod suckers",
+        "Flower thrips",
+        "Bruchid beetles"
+      ],
+      "harvest_info": "Hand-pick pods when they turn black/dark brown before shattering occurs.",
+      "kenya_notes": "Economic lifeline for Kitui, Makueni, Tharaka Nithi, and Embu semi-arid lowlands.",
+      "active": true
+    }
+  ],
+  "farm_events": [],
+  "payments": [],
+  "expert_reviews": [],
+  "notifications": [],
+  "knowledge_sources": [
+    {
+      "id": "src_kalro_soil_guide",
+      "title": "Kenya Soil Survey Guidelines and Agricultural Soil Fertility Management",
+      "organization": "KALRO (Kenya Agricultural and Livestock Research Organization)",
+      "url": "https://www.kalro.org",
+      "topic": "Soil Fertility & Acidic Soil Management",
+      "region": "Kenya Nationwide (Western, Rift, Central, Coastal, Eastern)",
+      "publication_date": "2023-04-15",
+      "review_status": "verified"
+    },
+    {
+      "id": "src_fao_kenya_crops",
+      "title": "Crop Ecological Requirements and Fertilizer Good Practices for Sub-Saharan Africa",
+      "organization": "Food and Agriculture Organization (FAO) of the United Nations",
+      "url": "https://www.fao.org/soils-portal",
+      "topic": "Soil Nutrients, pH Thresholds, and Organic Amendments",
+      "region": "East Africa / Kenya",
+      "publication_date": "2022-11-20",
+      "review_status": "verified"
+    },
+    {
+      "id": "src_icraf_agroforestry",
+      "title": "Soil Organic Carbon Restoration and Agroforestry Practices for Smallholders",
+      "organization": "CIFOR-ICRAF (World Agroforestry Center)",
+      "url": "https://www.worldagroforestry.org",
+      "topic": "Organic Matter, Mulching, and Soil Conservation",
+      "region": "Kenya",
+      "publication_date": "2023-08-10",
+      "review_status": "verified"
+    },
+    {
+      "id": "src_egerton_agronomy",
+      "title": "Integrated Soil Fertility Management (ISFM) Manual for Extension Officers",
+      "organization": "Egerton University Faculty of Agriculture",
+      "url": "https://www.egerton.ac.ke",
+      "topic": "Mineral Fertilizers, Farmyard Manure Synergy, and Soil Testing",
+      "region": "Kenya",
+      "publication_date": "2024-01-18",
+      "review_status": "verified"
+    }
+  ],
+  "feedback": [],
+  "audit_logs": [],
+  "system_settings": {
+    "ai_model": "gemini-3.8-flash",
+    "prompt_version": "shambasoil-v1.2-safeguard",
+    "maintenance_mode": false,
+    "free_analysis_limit": 10,
+    "mpesa_paybill": "522522",
+    "mpesa_till": "987654"
+  }
+}

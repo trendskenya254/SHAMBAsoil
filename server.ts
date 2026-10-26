@@ -126,8 +126,8 @@ async function startServer() {
   app.post('/api/auth/register', (req, res) => {
     try {
       const { email, phone, password, full_name, county, sub_county, ward, language, role } = req.body;
-      if (!email || !phone || !password || !full_name || !county || !sub_county) {
-        res.status(400).json({ error: 'All fields (Full name, phone, email, password, county, sub-county) are required.' });
+      if (!phone || !password || !full_name || !county || !sub_county) {
+        res.status(400).json({ error: 'Please enter your Full Name, Phone Number, Password, County, and Sub-County.' });
         return;
       }
 
@@ -137,7 +137,7 @@ async function startServer() {
       }
 
       const result = db.createUser({
-        email,
+        email: email ? email.trim() : undefined,
         phone,
         password,
         full_name,

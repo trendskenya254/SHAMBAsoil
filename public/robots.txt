@@ -1,0 +1,7 @@
+# ShambaSoil Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps
+Sitemap: /sitemap.xml

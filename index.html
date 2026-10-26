@@ -5,21 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>ShambaSoil — Your Soil. Your Crop. Your Decision.</title>
     <meta name="description" content="Kenyan mobile-first agricultural soil intelligence platform. Understand your soil, farm smarter, and make informed crop and fertilizer decisions." />
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- OpenGraph Social Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ShambaSoil" />
     <meta property="og:title" content="ShambaSoil — Your Soil. Your Crop. Your Decision." />
     <meta property="og:description" content="Kenyan mobile-first agricultural soil intelligence platform. Understand your soil, farm smarter, and make informed crop and fertilizer decisions." />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ShambaSoil Kenya Soil Intelligence Platform" />
+
+    <!-- Twitter Social Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ShambaSoil — Your Soil. Your Crop. Your Decision." />
+    <meta name="twitter:description" content="Kenyan mobile-first agricultural soil intelligence platform. Understand your soil, farm smarter, and make informed crop and fertilizer decisions." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- PWA & Mobile Web App Capabilities -->
     <meta name="theme-color" content="#2D4A22" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="apple-mobile-web-app-title" content="ShambaSoil" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ShambaSoil",
+      "alternateName": "ShambaSoil Kenya",
+      "url": "/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "description": "Kenyan mobile-first agricultural soil intelligence platform. Understand your soil, farm smarter, and make informed crop and fertilizer decisions.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KES"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Farmers, Agronomists, Agricultural Extension Officers"
+      }
+    }
+    </script>
   </head>
   <body class="bg-stone-50 text-stone-900 antialiased selection:bg-emerald-200 selection:text-emerald-900 font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

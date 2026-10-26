@@ -81,30 +81,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = async (identifier: string, pass: string) => {
-    setIsLoading(true);
-    try {
-      const res = await api.login({ identifier, password: pass });
-      setAuthToken(res.token);
-      setProfile(res.profile);
-      if (res.profile.language) {
-        setLanguage(res.profile.language);
-      }
-    } finally {
-      setIsLoading(false);
+    const res = await api.login({ identifier, password: pass });
+    setAuthToken(res.token);
+    setProfile(res.profile);
+    if (res.profile.language) {
+      setLanguage(res.profile.language);
     }
   };
 
   const register = async (data: any) => {
-    setIsLoading(true);
-    try {
-      const res = await api.register(data);
-      setAuthToken(res.token);
-      setProfile(res.profile);
-      if (res.profile.language) {
-        setLanguage(res.profile.language);
-      }
-    } finally {
-      setIsLoading(false);
+    const res = await api.register(data);
+    setAuthToken(res.token);
+    setProfile(res.profile);
+    if (res.profile.language) {
+      setLanguage(res.profile.language);
     }
   };
 

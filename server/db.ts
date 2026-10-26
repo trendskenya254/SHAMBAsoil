@@ -76,6 +76,24 @@ export interface DatabaseSchema {
   system_settings: SystemSettings;
 }
 
+export function normalizeKenyaPhone(raw: string): string {
+  if (!raw) return '';
+  const digits = raw.replace(/\D/g, '');
+  if (digits.startsWith('254') && digits.length === 12) {
+    return '+254' + digits.substring(3);
+  }
+  if (digits.startsWith('0') && digits.length === 10) {
+    return '+254' + digits.substring(1);
+  }
+  if ((digits.startsWith('7') || digits.startsWith('1')) && digits.length === 9) {
+    return '+254' + digits;
+  }
+  if (raw.trim().startsWith('+')) {
+    return '+' + digits;
+  }
+  return raw.trim();
+}
+
 class DatabaseService {
   private data: DatabaseSchema;
   private saveTimeout: NodeJS.Timeout | null = null;
@@ -166,7 +184,7 @@ class DatabaseService {
   }
 
   createUser(params: {
-    email: string;
+    email?: string;
     phone: string;
     password: string;
     full_name: string;
@@ -176,13 +194,21 @@ class DatabaseService {
     language?: 'en' | 'sw';
     role?: UserProfile['role'];
   }): { user: AuthUser; profile: UserProfile; token: string } {
-    const normalizedEmail = params.email.trim().toLowerCase();
-    const normalizedPhone = params.phone.trim();
+    const normalizedPhone = normalizeKenyaPhone(params.phone);
+    const normalizedEmail = params.email && params.email.trim()
+      ? params.email.trim().toLowerCase()
+      : `${normalizedPhone.replace(/\D/g, '')}@shambasoil.ke`;
 
     // Check uniqueness
-    const existing = this.data.auth_users.find(
-      u => u.email.toLowerCase() === normalizedEmail || u.phone === normalizedPhone
-    );
+    const existing = this.data.auth_users.find(u => {
+      const emailMatches = u.email && normalizedEmail && u.email.toLowerCase() === normalizedEmail;
+      const phoneMatches = u.phone && normalizedPhone && (
+        normalizeKenyaPhone(u.phone) === normalizedPhone ||
+        u.phone.replace(/\D/g, '') === normalizedPhone.replace(/\D/g, '')
+      );
+      return emailMatches || phoneMatches;
+    });
+
     if (existing) {
       throw new Error('An account with this email or phone number already exists.');
     }
@@ -241,9 +267,20 @@ class DatabaseService {
 
   authenticateUser(identifier: string, password: string): { user: AuthUser; profile: UserProfile; token: string } {
     const idClean = identifier.trim().toLowerCase();
-    const user = this.data.auth_users.find(
-      u => u.email.toLowerCase() === idClean || u.phone.replace(/[\s\-\+]/g, '') === idClean.replace(/[\s\-\+]/g, '')
-    );
+    const idPhoneNorm = normalizeKenyaPhone(identifier);
+    const idDigitsOnly = identifier.replace(/\D/g, '');
+
+    const user = this.data.auth_users.find(u => {
+      // Email match
+      if (u.email && u.email.toLowerCase() === idClean) return true;
+      // Phone match via normalized Kenyan format
+      if (u.phone) {
+        if (normalizeKenyaPhone(u.phone) === idPhoneNorm) return true;
+        if (idDigitsOnly.length >= 8 && u.phone.replace(/\D/g, '').endsWith(idDigitsOnly.slice(-9))) return true;
+        if (u.phone.replace(/[\s\-\+]/g, '') === idClean.replace(/[\s\-\+]/g, '')) return true;
+      }
+      return false;
+    });
 
     if (!user) {
       throw new Error('Invalid email/phone or password.');
